@@ -1,0 +1,51 @@
+# ═══════════════════════════════════════════════════════════════
+# Tina Bible Listener for EasyWorship — Full Requirements
+# Python 3.10+ required  |  Windows 10/11 recommended
+# Install: pip install -r requirements.txt
+# ═══════════════════════════════════════════════════════════════
+
+
+# ── GUI ─────────────────────────────────────────────────────────
+PyQt6>=6.6.0                  # Qt6 desktop UI framework
+PyQt6-Qt6>=6.6.0              # Qt6 shared libraries (auto-installed with PyQt6)
+PyQt6-sip>=13.6.0             # SIP bindings (auto-installed with PyQt6)
+
+
+# ── Speech Capture & STT ────────────────────────────────────────
+sounddevice>=0.4.6            # Cross-platform microphone capture (PortAudio wrapper)
+faster-whisper>=1.0.0         # Fast OpenAI Whisper inference via CTranslate2
+numpy>=1.24.0                 # Audio buffer handling (required by sounddevice)
+
+
+# ── Bible Reference Parsing ─────────────────────────────────────
+rapidfuzz>=3.6.0              # Fuzzy string matching for book name recognition
+
+
+# ── EasyWorship UI Automation ───────────────────────────────────
+pywinauto>=0.6.8              # Windows UI Automation (primary method)
+pyautogui>=0.9.54             # Fallback keyboard/mouse automation
+Pillow>=10.0.0                # Required by pyautogui for screenshot support
+
+
+# ── Companion TCP Client ─────────────────────────────────────────
+# (uses stdlib socket — no extra package needed)
+
+
+# ── Configuration & CLI ─────────────────────────────────────────
+python-dotenv>=1.0.0          # Load .env config files
+click>=8.1.7                  # CLI entry point (main.py)
+
+
+# ── Logging ─────────────────────────────────────────────────────
+loguru>=0.7.2                 # Structured rotating log files
+
+
+# ── Optional: CUDA acceleration for Whisper ─────────────────────
+# Uncomment if you have an NVIDIA GPU and want faster STT:
+# torch>=2.1.0               # Required for CUDA compute device
+# torchaudio>=2.1.0          # Audio utilities for torch
+
+
+# ── Dev / Testing only (not needed at runtime) ──────────────────
+# pytest>=7.4.0
+# pytest-qt>=4.2.0
