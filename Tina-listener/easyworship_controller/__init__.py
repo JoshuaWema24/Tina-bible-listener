@@ -60,4 +60,4 @@ class EasyWorshipController:
         self._overlay.stop()
         self._companion.disconnect()
 
-        logger.success("Controller stopped")g
+        logger.success("Controller stopped")
